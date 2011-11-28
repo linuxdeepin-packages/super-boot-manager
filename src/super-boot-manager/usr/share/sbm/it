@@ -1,0 +1,181 @@
+Grub-installer
+Parametri
+INSTALLAZIONE-BURG
+Dove installare/ripristinare Burg
+Emula Burg, tasti T e F
+burg-install
+burg-emu
+Seleziona OS iniziale
+Applica
+Risoluzione del tuo monitor:
+Cambia risoluzione
+Il timeout e' impostato su
+secondi
+Cambia timeout
+Applica modifiche
+Installazione Temi
+Rimuovere burg
+Elimina burg, e ripristina grub
+rimuovi burg
+Scegliere il disco
+Ripristina grub
+Parametri avanzati
+Edita /etc/default/burg
+Apri file
+SI
+NO
+Cambia
+Salvato
+Nome Utente burg:
+Aggiungi
+Elimina
+Info
+LICENSE
+SBM HOMEPAGE
+BURG HOMEPAGE PROJECT
+SITO BUC
+SITO SICILINUX
+2 click sul tema per installare
+Elimina kernel/menuentry vecchie:
+Esegui         
+Ripristina Impostazioni predefinite
+Ripristina impostazioni
+ISO
+Seleziona la iso da bootare
+Aggiungi menuentry
+Imposta il tipo di iso
+Verifica la disponibilita' di aggiornamenti
+Esegui
+NUOVA VERSIONE DISPONIBILE
+Aggiornare?
+Si
+No
+nome amministratore
+nome utente
+Dopo l'aggiornamento Super-Boot-Manager sarà
+riavviato automaticamente
+Nessun aggiornamento disponibile
+OK
+Seleziona iso per la quale vuoi rimuovere la menuentry
+Rimuovi
+Operazione effettuata con successo
+Ripristina il burg nel MBR
+Parametri base
+In caso di aggiornamento del kernel, 
+GRUB viene sovrascritto nel MBR.
+Cliccando su "Ripristina il BURG"
+e' possibile porre rimedio a questo 
+inconveniente.
+Aiuto
+Errore durante l'installazione
+Installazione Grub
+Dove installare/riprist. grub
+Emula Grub, tasti T e F 
+grub-install
+grub-emu
+Elimina Grub, e ripristina Burg
+rimuovi grub
+Ripristina grub
+Edita /etc/default/grub
+Nome Utente grub:
+Ripristina il grub nel MBR
+grub viene sovrascritto nel MBR.
+Cliccando su "Ripristina il GRUB"
+Installazione
+Indica l'hard disk in cui installare Grub:
+Installa Grub
+Seleziona l'immagine da impostare come sfondo del Grub (.jpg,.tga,.png)
+
+Applica
+Scegli i colori per...
+testo normale
+sfondo testo normale
+testo selezionato
+sfondo testo selezionato
+Cambia colori
+Burg-installer
+Param. 1
+Param. 2
+Param. 3
+Param. 4
+Stile
+Tutorial: risoluzione grafica
+1) impostare la risoluzione grafica per il bootloader tramite
+   le funzionalita' presenti nel Burg-Manager e nel Grub-Manager
+   a seconda del bootloader in uso
+2) riavviare, accedere al burg/grub, premere c per passare
+   alla shell eseguire vbeinfo e annotarsi il codice vesa 
+   corrispondente alla stessa risoluzione utilizzata per il grub/burg
+   (es. vga=0x0319). Digitare "exit" e riavviare in Ubuntu.
+3) Per il BURG:
+   avviare il burg-manager e impostare nella tab 'Parametri 4'
+   per il campo GRUB_CMDLINE_LINUX il valore annotato (es. vga=0x0319)
+   e abilitare nella tab 'Parametri 3' GRUB_LINUX16
+   eseguire da terminale: sudo update-burg
+   riavviare per controllare che Plymouth venga visualizzato
+   correttamente
+   Per il GRUB:
+   avviare il grub-manager e impostare nella tab 'Parametri 3'
+   per il campo GRUB_CMDLINE_LINUX il valore annotato (es. vga=0x0319)
+   e abilitare nella tab 'Parametri 4' GRUB_LINUX16.
+   Eseguire da terminale: sudo update-grub
+   Riavviare per controllare che Plymouth venga visualizzato.
+   correttamente.
+   Se Plymouth non viene visualizzato correttamente utilizzare la 
+   funzionalita' presente nella tab "Driver Proprietari".
+Apri
+In questa scheda puoi rendere Plymouth compatibile con i driver proprietari.
+Se stai utilizzando i driver open, non eseguire questa procedura.
+In alcuni casi il metodo proposto nel tutorial nella prima scheda non funziona 
+e bisogna ricorrere al metodo implementato in questa scheda.
+Crea e installa il tema
+Crea il tema nella seguente directory senza installarlo:
+Modello tema
+Modifica plymouth
+Abilita/disabilita Plymouth
+abilita
+disabilita
+Temi
+Anteprima tema predefinito
+Clicca due volte per installare un tema
+1. Imposta un tema come predefinito
+2. Applica modifiche
+Crea il tuo tema
+Visualizza modello del tema
+Seleziona lo sfondo (*.jpg *.png)
+Seleziona il logo  (*.jpg *.png)
+Scegli il nome per il tuo tema:
+Mytheme
+Directory:
+Driver proprietari
+Seleziona il bootloader che utilizzi:
+Applica Fix
+Annulla Fix
+grub-emu
+chiudi grub-emu
+tasti utili
+t - Apre il menu di selezione del tema
+f - Raggruppa le voci con stessa classe
+n - Salta alla voce successiva con stessa classe
+w - Salta alla successiva voce di Windows
+u - Salta alla successiva voce di Ubuntu
+e - Edita il comando della voce di menu' corrente
+c - Apre la finestra del terminale
+2 - Apre due finestre del terminale
+h - Mostra la finestra di dialogo (disponibile solo con il tema Sora)
+i - Mostra la finestra di dialogo delle info (disponibile solo con il tema Sora)
+q - Ritorna al vecchio menu del grub
+F5/ctrl-x - Completa la modifica
+F6 - Cambia finestra nella modalita' a due terminali
+F7 - Elenca le voci di menu raggruppate
+F8 - Cambia tra la modalita' grafica e la modalita' testuale
+F9 - spegni
+F10 - riavvia
+ESC - esci dal menù popup o di dialogo corrente 
+Verifica Aggiornamenti
+Info
+Solo per esperti: il sistema potrebbe non avviarsi
+codici vesa
+Codici vesa corrispondenti alle 
+risoluzioni piu' comuni:
+Aggiornare lista pacchetti

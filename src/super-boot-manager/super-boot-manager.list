@@ -1,0 +1,269 @@
+%product super-boot-manager 
+%description super-boot-manager is a very intuitive gui which has the aim to simplify the installation and configuration of Burg, Grub and Plymouth.
+%version 0.5.0
+%copyright GPL
+%vendor www.sourceslist.eu
+%readme README
+%license LICENSE
+%packager Ingalex
+%postinstall <<EOF
+#!/bin/sh
+chmod a+x /usr/bin/super-boot-manager
+set -e
+
+# Automatically added by dh_installmenu
+if [ "$$1" = "configure" ] && [ -x "`which update-menus 2>/dev/null`" ]; then
+	update-menus
+fi
+# End automatically added section
+# Automatically added by dh_installmime
+if [ "$$1" = "configure" ] && [ -x "`which update-mime 2>/dev/null`" ]; then
+	update-mime
+fi
+# End automatically added section
+# Automatically added by dh_makeshlibs
+if [ "$$1" = "configure" ]; then
+	ldconfig
+fi
+# End automatically added section
+sudo rm -rf /root/.sbm ~/.sbm ~/.local/share/applications/sbm*.desktop
+EOF
+%postremove <<EOF
+#!/bin/sh
+set -e
+# Automatically added by dh_makeshlibs
+if [ "$$1" = "remove" ]; then
+	ldconfig
+fi
+# End automatically added section
+# Automatically added by dh_installmime
+if which update-mime >/dev/null 2>&1; then update-mime; fi
+# End automatically added section
+# Automatically added by dh_installmenu
+if [ -x "`which update-menus 2>/dev/null`" ]; then update-menus ; fi
+# End automatically added section
+EOF
+
+%requires xterm >= 256
+%requires zenity >= 2.30.0
+%requires libqtgui4 >= 4.7.0
+%requires plymouth-x11 >= 0.8.2
+%requires imagemagick >= 7:6.6.2.6
+%requires tar >= 1.25-3
+
+d 755 root root /usr -
+d 755 root root /usr/bin -
+f 755 root root /usr/bin/super-boot-manager ./root/usr/bin/super-boot-manager
+d 755 root root /usr/share -
+d 755 root root /usr/share/applications -
+f 644 root root /usr/share/applications/Super-boot-manager.desktop ./root/usr/share/applications/Super-boot-manager.desktop
+d 755 root root /usr/share/icons -
+d 755 root root /usr/share/icons/hicolor -
+d 755 root root /usr/share/icons/hicolor/22x22 -
+d 755 root root /usr/share/icons/hicolor/22x22/apps -
+f 644 root root /usr/share/icons/hicolor/22x22/apps/super-boot-manager.png ./root/usr/share/icons/hicolor/22x22/apps/super-boot-manager.png
+d 755 root root /usr/share/icons/hicolor/16x16 -
+d 755 root root /usr/share/icons/hicolor/16x16/apps -
+f 644 root root /usr/share/icons/hicolor/16x16/apps/super-boot-manager.png ./root/usr/share/icons/hicolor/16x16/apps/super-boot-manager.png
+d 755 root root /usr/share/icons/hicolor/48x48 -
+d 755 root root /usr/share/icons/hicolor/48x48/apps -
+f 644 root root /usr/share/icons/hicolor/48x48/apps/super-boot-manager.png ./root/usr/share/icons/hicolor/48x48/apps/super-boot-manager.png
+d 755 root root /usr/share/icons/hicolor/32x32 -
+d 755 root root /usr/share/icons/hicolor/32x32/apps -
+f 644 root root /usr/share/icons/hicolor/32x32/apps/super-boot-manager.png ./root/usr/share/icons/hicolor/32x32/apps/super-boot-manager.png
+d 755 root root /usr/share/icons/hicolor/128x128 -
+d 755 root root /usr/share/icons/hicolor/128x128/apps -
+f 644 root root /usr/share/icons/hicolor/128x128/apps/super-boot-manager.png ./root/usr/share/icons/hicolor/128x128/apps/super-boot-manager.png
+d 755 root root /usr/share/icons/hicolor/64x64 -
+d 755 root root /usr/share/icons/hicolor/64x64/apps -
+f 644 root root /usr/share/icons/hicolor/64x64/apps/super-boot-manager.png ./root/usr/share/icons/hicolor/64x64/apps/super-boot-manager.png
+d 755 root root /usr/share/icons/hicolor/24x24 -
+d 755 root root /usr/share/icons/hicolor/24x24/apps -
+f 644 root root /usr/share/icons/hicolor/24x24/apps/super-boot-manager.png ./root/usr/share/icons/hicolor/24x24/apps/super-boot-manager.png
+d 755 root root /usr/share/sbm -
+f 755 root root /usr/share/sbm/addmenuentry_grub ./root/usr/share/sbm/addmenuentry_grub
+f 755 root root /usr/share/sbm/isoremover ./root/usr/share/sbm/isoremover
+f 644 root root /usr/share/sbm/burg-manager.mc ./root/usr/share/sbm/burg-manager.mc
+f 644 root root /usr/share/sbm/.directory ./root/usr/share/sbm/.directory
+f 755 root root /usr/share/sbm/sceltaos ./root/usr/share/sbm/sceltaos
+f 644 root root /usr/share/sbm/grub-manager.mc ./root/usr/share/sbm/grub-manager.mc
+f 644 root root /usr/share/sbm/adv-par.mc ./root/usr/share/sbm/adv-par.mc
+f 644 root root /usr/share/sbm/help1.mc ./root/usr/share/sbm/help1.mc
+f 644 root root /usr/share/sbm/.goutputstream-RWD3OV ./root/usr/share/sbm/.goutputstream-RWD3OV
+f 644 root root /usr/share/sbm/tutorial.mc ./root/usr/share/sbm/tutorial.mc
+f 755 root root /usr/share/sbm/installer ./root/usr/share/sbm/installer
+f 755 root root /usr/share/sbm/grub_cmdlined_b ./root/usr/share/sbm/grub_cmdlined_b
+f 755 root root /usr/share/sbm/plymouth-resolution-fix-revert-back_burg.sh ./root/usr/share/sbm/plymouth-resolution-fix-revert-back_burg.sh
+f 755 root root /usr/share/sbm/grub_cmdline ./root/usr/share/sbm/grub_cmdline
+f 644 root root /usr/share/sbm/version ./root/usr/share/sbm/version
+f 644 root root /usr/share/sbm/useful_button.mc ./root/usr/share/sbm/useful_button.mc
+f 755 root root /usr/share/sbm/cleaner ./root/usr/share/sbm/cleaner
+f 755 root root /usr/share/sbm/sbm.mc ./root/usr/share/sbm/sbm.mc
+f 755 root root /usr/share/sbm/theme_maker ./root/usr/share/sbm/theme_maker
+f 644 root root /usr/share/sbm/langchooser.mc ./root/usr/share/sbm/langchooser.mc
+d 755 root root /usr/share/sbm/model -
+f 755 root root /usr/share/sbm/model/suspend.png ./root/usr/share/sbm/model/suspend.png
+f 755 root root /usr/share/sbm/model/progress_box_background.png ./root/usr/share/sbm/model/progress_box_background.png
+f 600 root root /usr/share/sbm/model/.directory ./root/usr/share/sbm/model/.directory
+f 755 root root /usr/share/sbm/model/animation.png ./root/usr/share/sbm/model/animation.png
+f 755 root root /usr/share/sbm/model/lock.png ./root/usr/share/sbm/model/lock.png
+f 755 root root /usr/share/sbm/model/bullet.png ./root/usr/share/sbm/model/bullet.png
+f 755 root root /usr/share/sbm/model/entry.png ./root/usr/share/sbm/model/entry.png
+f 755 root root /usr/share/sbm/model/motif.png ./root/usr/share/sbm/model/motif.png
+f 755 root root /usr/share/sbm/model/progress_box.png ./root/usr/share/sbm/model/progress_box.png
+f 755 root root /usr/share/sbm/model/mdv.script ./root/usr/share/sbm/model/mdv.script
+f 755 root root /usr/share/sbm/model/progress_bar.png ./root/usr/share/sbm/model/progress_bar.png
+f 755 root root /usr/share/sbm/model/progress_box_edge.png ./root/usr/share/sbm/model/progress_box_edge.png
+f 755 root root /usr/share/sbm/model/box.png ./root/usr/share/sbm/model/box.png
+f 755 root root /usr/share/sbm/sceltaos_grub ./root/usr/share/sbm/sceltaos_grub
+f 755 root root /usr/share/sbm/isoremover_grub ./root/usr/share/sbm/isoremover_grub
+f 755 root root /usr/share/sbm/plymouth-resolution-fix-revert-back.sh ./root/usr/share/sbm/plymouth-resolution-fix-revert-back.sh
+f 755 root root /usr/share/sbm/listaiso ./root/usr/share/sbm/listaiso
+d 755 root root /usr/share/sbm/doc -
+d 755 root root /usr/share/sbm/doc/burg-manager -
+f 644 root root /usr/share/sbm/doc/burg-manager/copyright ./root/usr/share/sbm/doc/burg-manager/copyright
+f 755 root root /usr/share/sbm/listaiso_grub ./root/usr/share/sbm/listaiso_grub
+f 644 root root /usr/share/sbm/plymouth.mc ./root/usr/share/sbm/plymouth.mc
+f 755 root root /usr/share/sbm/updater ./root/usr/share/sbm/updater
+f 644 root root /usr/share/sbm/unsuccess.mc ./root/usr/share/sbm/unsuccess.mc
+f 755 root root /usr/share/sbm/listaos ./root/usr/share/sbm/listaos
+f 644 root root /usr/share/sbm/model.mc ./root/usr/share/sbm/model.mc
+f 755 root root /usr/share/sbm/grub_cmdlined ./root/usr/share/sbm/grub_cmdlined
+f 644 root root /usr/share/sbm/license.mc ./root/usr/share/sbm/license.mc
+f 644 root root /usr/share/sbm/burg-manager_old.mc ./root/usr/share/sbm/burg-manager_old.mc
+f 755 root root /usr/share/sbm/set_image ./root/usr/share/sbm/set_image
+f 644 root root /usr/share/sbm/grub-manager_old.mc ./root/usr/share/sbm/grub-manager_old.mc
+f 755 root root /usr/share/sbm/plymouth-resolution-fix_burg.sh ./root/usr/share/sbm/plymouth-resolution-fix_burg.sh
+f 755 root root /usr/share/sbm/addmenuentry ./root/usr/share/sbm/addmenuentry
+f 644 root root /usr/share/sbm/it_old ./root/usr/share/sbm/it_old
+f 755 root root /usr/share/sbm/global ./root/usr/share/sbm/global
+d 755 root root /usr/share/sbm/images -
+f 644 root root /usr/share/sbm/images/install.png ./root/usr/share/sbm/images/install.png
+f 644 root root /usr/share/sbm/images/octo_3.png ./root/usr/share/sbm/images/octo_3.png
+f 644 root root /usr/share/sbm/images/.directory ./root/usr/share/sbm/images/.directory
+d 755 root root /usr/share/sbm/images/preview -
+f 644 root root /usr/share/sbm/images/preview/kubuntu_wall.png ./root/usr/share/sbm/images/preview/kubuntu_wall.png
+f 644 root root /usr/share/sbm/images/preview/vitruvio.png ./root/usr/share/sbm/images/preview/vitruvio.png
+f 644 root root /usr/share/sbm/images/preview/fortune.png ./root/usr/share/sbm/images/preview/fortune.png
+f 644 root root /usr/share/sbm/images/preview/.directory ./root/usr/share/sbm/images/preview/.directory
+f 644 root root /usr/share/sbm/images/preview/abstract.png ./root/usr/share/sbm/images/preview/abstract.png
+f 644 root root /usr/share/sbm/images/preview/ubuntu_brand.png ./root/usr/share/sbm/images/preview/ubuntu_brand.png
+f 644 root root /usr/share/sbm/images/preview/magic.png ./root/usr/share/sbm/images/preview/magic.png
+f 644 root root /usr/share/sbm/images/preview/minimal_by_sir.png ./root/usr/share/sbm/images/preview/minimal_by_sir.png
+f 644 root root /usr/share/sbm/images/preview/kubuntu_brand.png ./root/usr/share/sbm/images/preview/kubuntu_brand.png
+f 644 root root /usr/share/sbm/images/preview/hortensia.png ./root/usr/share/sbm/images/preview/hortensia.png
+f 644 root root /usr/share/sbm/images/preview/kubuntu_EOS.png ./root/usr/share/sbm/images/preview/kubuntu_EOS.png
+f 644 root root /usr/share/sbm/images/preview/minimal.png ./root/usr/share/sbm/images/preview/minimal.png
+f 644 root root /usr/share/sbm/images/preview/orange.png ./root/usr/share/sbm/images/preview/orange.png
+f 644 root root /usr/share/sbm/images/preview/sunset.png ./root/usr/share/sbm/images/preview/sunset.png
+f 644 root root /usr/share/sbm/images/preview/gnome1.png ./root/usr/share/sbm/images/preview/gnome1.png
+f 644 root root /usr/share/sbm/images/preview/mint.png ./root/usr/share/sbm/images/preview/mint.png
+f 644 root root /usr/share/sbm/images/preview/wasp.png ./root/usr/share/sbm/images/preview/wasp.png
+f 644 root root /usr/share/sbm/images/preview/darkshine.png ./root/usr/share/sbm/images/preview/darkshine.png
+f 644 root root /usr/share/sbm/images/preview/goldensea.png ./root/usr/share/sbm/images/preview/goldensea.png
+f 644 root root /usr/share/sbm/images/preview/ubuntu_wall.png ./root/usr/share/sbm/images/preview/ubuntu_wall.png
+f 644 root root /usr/share/sbm/images/preview/sexybuntu.png ./root/usr/share/sbm/images/preview/sexybuntu.png
+f 644 root root /usr/share/sbm/images/preview/autumn.png ./root/usr/share/sbm/images/preview/autumn.png
+f 644 root root /usr/share/sbm/images/preview/homer.png ./root/usr/share/sbm/images/preview/homer.png
+f 644 root root /usr/share/sbm/images/preview/picchio.png ./root/usr/share/sbm/images/preview/picchio.png
+f 644 root root /usr/share/sbm/images/preview/tux-burger.png ./root/usr/share/sbm/images/preview/tux-burger.png
+f 644 root root /usr/share/sbm/images/preview/gogo-noge-hot-legs.png ./root/usr/share/sbm/images/preview/gogo-noge-hot-legs.png
+f 644 root root /usr/share/sbm/images/preview/radiance.png ./root/usr/share/sbm/images/preview/radiance.png
+f 644 root root /usr/share/sbm/images/restore.png ./root/usr/share/sbm/images/restore.png
+f 644 root root /usr/share/sbm/images/linea.png ./root/usr/share/sbm/images/linea.png
+f 644 root root /usr/share/sbm/images/ISO.png ./root/usr/share/sbm/images/ISO.png
+f 644 root root /usr/share/sbm/images/attention.png ./root/usr/share/sbm/images/attention.png
+f 644 root root /usr/share/sbm/images/help.png ./root/usr/share/sbm/images/help.png
+f 644 root root /usr/share/sbm/images/burg-emu.png ./root/usr/share/sbm/images/burg-emu.png
+f 644 root root /usr/share/sbm/images/octo_2.png ./root/usr/share/sbm/images/octo_2.png
+d 755 root root /usr/share/sbm/images/preview_plymouth -
+f 644 root root /usr/share/sbm/images/preview_plymouth/paw_arch.png ./root/usr/share/sbm/images/preview_plymouth/paw_arch.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/ubuntustudio.png ./root/usr/share/sbm/images/preview_plymouth/ubuntustudio.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/dm_ubuntu.png ./root/usr/share/sbm/images/preview_plymouth/dm_ubuntu.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/earth-sunrise.png ./root/usr/share/sbm/images/preview_plymouth/earth-sunrise.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/MIB_Kubuntu.png ./root/usr/share/sbm/images/preview_plymouth/MIB_Kubuntu.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/ubuntu-sunrise.png ./root/usr/share/sbm/images/preview_plymouth/ubuntu-sunrise.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/elementary-logo2.png ./root/usr/share/sbm/images/preview_plymouth/elementary-logo2.png
+f 600 root root /usr/share/sbm/images/preview_plymouth/.directory ./root/usr/share/sbm/images/preview_plymouth/.directory
+f 644 root root /usr/share/sbm/images/preview_plymouth/ubuntu-logo-women.png ./root/usr/share/sbm/images/preview_plymouth/ubuntu-logo-women.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/FWL_Gold.png ./root/usr/share/sbm/images/preview_plymouth/FWL_Gold.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/sabily.png ./root/usr/share/sbm/images/preview_plymouth/sabily.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/AzenisBuntu.png ./root/usr/share/sbm/images/preview_plymouth/AzenisBuntu.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/mintdoes7.png ./root/usr/share/sbm/images/preview_plymouth/mintdoes7.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/solar.png ./root/usr/share/sbm/images/preview_plymouth/solar.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/edubuntu_logo.png ./root/usr/share/sbm/images/preview_plymouth/edubuntu_logo.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/linux-is-sexy.png ./root/usr/share/sbm/images/preview_plymouth/linux-is-sexy.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/azenis.png ./root/usr/share/sbm/images/preview_plymouth/azenis.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/lubuntu_logo.png ./root/usr/share/sbm/images/preview_plymouth/lubuntu_logo.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/MIBOxygen.png ./root/usr/share/sbm/images/preview_plymouth/MIBOxygen.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/my-ubuntu-logo.png ./root/usr/share/sbm/images/preview_plymouth/my-ubuntu-logo.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/space-sunrise.png ./root/usr/share/sbm/images/preview_plymouth/space-sunrise.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Kmint.png ./root/usr/share/sbm/images/preview_plymouth/Kmint.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/PAW_Ubuntu.png ./root/usr/share/sbm/images/preview_plymouth/PAW_Ubuntu.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/mint-logo.png ./root/usr/share/sbm/images/preview_plymouth/mint-logo.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/fade-in.png ./root/usr/share/sbm/images/preview_plymouth/fade-in.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/satanic.png ./root/usr/share/sbm/images/preview_plymouth/satanic.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/script.png ./root/usr/share/sbm/images/preview_plymouth/script.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Texans.png ./root/usr/share/sbm/images/preview_plymouth/Texans.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Fun_With_LinuxU.png ./root/usr/share/sbm/images/preview_plymouth/Fun_With_LinuxU.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/ubuntu_splash.png ./root/usr/share/sbm/images/preview_plymouth/ubuntu_splash.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/spinfinity-ubuntu-women.png ./root/usr/share/sbm/images/preview_plymouth/spinfinity-ubuntu-women.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Stargate.png ./root/usr/share/sbm/images/preview_plymouth/Stargate.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/kubuntu_logo.png ./root/usr/share/sbm/images/preview_plymouth/kubuntu_logo.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/wheat.png ./root/usr/share/sbm/images/preview_plymouth/wheat.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Lmint.png ./root/usr/share/sbm/images/preview_plymouth/Lmint.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/U-p.png ./root/usr/share/sbm/images/preview_plymouth/U-p.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/ubuntu_orange.png ./root/usr/share/sbm/images/preview_plymouth/ubuntu_orange.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/elementary-logo.png ./root/usr/share/sbm/images/preview_plymouth/elementary-logo.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/U-p_2.png ./root/usr/share/sbm/images/preview_plymouth/U-p_2.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/spinfinity-mint-01.png ./root/usr/share/sbm/images/preview_plymouth/spinfinity-mint-01.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/spinfinity-mint-02.png ./root/usr/share/sbm/images/preview_plymouth/spinfinity-mint-02.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/model.png ./root/usr/share/sbm/images/preview_plymouth/model.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/xubuntu_logo.png ./root/usr/share/sbm/images/preview_plymouth/xubuntu_logo.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/mint-sunrise.png ./root/usr/share/sbm/images/preview_plymouth/mint-sunrise.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Ubuntu_GREEN_2_1.png ./root/usr/share/sbm/images/preview_plymouth/Ubuntu_GREEN_2_1.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/ubuntu_logo.png ./root/usr/share/sbm/images/preview_plymouth/ubuntu_logo.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Ubuntu_green.png ./root/usr/share/sbm/images/preview_plymouth/Ubuntu_green.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/PAW_OS_X.png ./root/usr/share/sbm/images/preview_plymouth/PAW_OS_X.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/spinfinity.png ./root/usr/share/sbm/images/preview_plymouth/spinfinity.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/LMDE.png ./root/usr/share/sbm/images/preview_plymouth/LMDE.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/MIB_Ubuntu.png ./root/usr/share/sbm/images/preview_plymouth/MIB_Ubuntu.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Fun_With_Linux_2.png ./root/usr/share/sbm/images/preview_plymouth/Fun_With_Linux_2.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/Narwhals.png ./root/usr/share/sbm/images/preview_plymouth/Narwhals.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/kubuntu-logo-stripes.png ./root/usr/share/sbm/images/preview_plymouth/kubuntu-logo-stripes.png
+f 644 root root /usr/share/sbm/images/preview_plymouth/INT-MINT.png ./root/usr/share/sbm/images/preview_plymouth/INT-MINT.png
+f 644 root root /usr/share/sbm/images/logo.png ./root/usr/share/sbm/images/logo.png
+f 644 root root /usr/share/sbm/images/octo_1.png ./root/usr/share/sbm/images/octo_1.png
+d 755 root root /usr/share/sbm/images/flag -
+f 644 root root /usr/share/sbm/images/flag/Sweden.png ./root/usr/share/sbm/images/flag/Sweden.png
+f 644 root root /usr/share/sbm/images/flag/Croatia.png ./root/usr/share/sbm/images/flag/Croatia.png
+f 644 root root /usr/share/sbm/images/flag/Italy.png ./root/usr/share/sbm/images/flag/Italy.png
+f 644 root root /usr/share/sbm/images/flag/China.png ./root/usr/share/sbm/images/flag/China.png
+f 644 root root /usr/share/sbm/images/flag/Spain.png ./root/usr/share/sbm/images/flag/Spain.png
+f 644 root root /usr/share/sbm/images/flag/Netherlands.png ./root/usr/share/sbm/images/flag/Netherlands.png
+f 644 root root /usr/share/sbm/images/flag/Indonesia.png ./root/usr/share/sbm/images/flag/Indonesia.png
+f 644 root root /usr/share/sbm/images/flag/Portugal.png ./root/usr/share/sbm/images/flag/Portugal.png
+f 644 root root /usr/share/sbm/images/flag/Poland.png ./root/usr/share/sbm/images/flag/Poland.png
+f 644 root root /usr/share/sbm/images/flag/England.png ./root/usr/share/sbm/images/flag/England.png
+f 644 root root /usr/share/sbm/images/flag/Brazil.png ./root/usr/share/sbm/images/flag/Brazil.png
+f 644 root root /usr/share/sbm/images/flag/Germany.png ./root/usr/share/sbm/images/flag/Germany.png
+f 644 root root /usr/share/sbm/images/flag/Hungary.png ./root/usr/share/sbm/images/flag/Hungary.png
+f 644 root root /usr/share/sbm/images/flag/Romania.png ./root/usr/share/sbm/images/flag/Romania.png
+f 644 root root /usr/share/sbm/images/flag/France.png ./root/usr/share/sbm/images/flag/France.png
+f 644 root root /usr/share/sbm/images/apply.png ./root/usr/share/sbm/images/apply.png
+f 644 root root /usr/share/sbm/images/remove.png ./root/usr/share/sbm/images/remove.png
+f 644 root root /usr/share/sbm/images/admin.png ./root/usr/share/sbm/images/admin.png
+f 644 root root /usr/share/sbm/images/OK.png ./root/usr/share/sbm/images/OK.png
+f 755 root root /usr/share/sbm/killpop ./root/usr/share/sbm/killpop
+f 644 root root /usr/share/sbm/adv-par-g.mc ./root/usr/share/sbm/adv-par-g.mc
+f 644 root root /usr/share/sbm/it ./root/usr/share/sbm/it
+f 644 root root /usr/share/sbm/success.mc ./root/usr/share/sbm/success.mc
+f 644 root root /usr/share/sbm/updateavaible.mc ./root/usr/share/sbm/updateavaible.mc
+f 644 root root /usr/share/sbm/info.mc ./root/usr/share/sbm/info.mc
+f 755 root root /usr/share/sbm/listaos_grub ./root/usr/share/sbm/listaos_grub
+f 644 root root /usr/share/sbm/en ./root/usr/share/sbm/en
+f 755 root root /usr/share/sbm/killlang ./root/usr/share/sbm/killlang
+f 755 root root /usr/share/sbm/notifier ./root/usr/share/sbm/notifier
+f 644 root root /usr/share/sbm/updatenotavaible.mc ./root/usr/share/sbm/updatenotavaible.mc
+f 755 root root /usr/share/sbm/plymouth-resolution-fix.sh ./root/usr/share/sbm/plymouth-resolution-fix.sh
+f 755 root root /usr/share/sbm/grub_cmdline_b ./root/usr/share/sbm/grub_cmdline_b

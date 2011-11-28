@@ -1,0 +1,20 @@
+Source: super-boot-manager
+Section: admin
+Priority: optional
+Maintainer: Li Longyu <leaeasy@gmail.com>
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 8.0.0)
+Homepage: http://www.sourceslist.eu/projects/super-boot-manager
+
+Package: super-boot-manager
+Architecture: all
+Depends: buc (>=0.5.2), xterm (>=256), zenity (>=2.30.0), libqtgui4 (>=4.6.2), plymouth-x11 (>=0.8.2), imagemagick (>=7:6.5.7.8), tar (>=1.22-2), ${misc:Depends}
+Description: Simple gui to configure Grub2, Burg and Plymouth.
+ Super-Boot-Manger is a simple gui created with buc 
+ (http://buc.intilinux.com/wiki/index.php?title=Pagina_principale).
+ This interface has the main purpose to make easer 
+ and intuitive configuration of Grub, Burg (Brand-new
+ Universal loadeR from GRUB) and Plymouth. This interface  
+ also allows the installation of Burg, the installation
+ of many graphic themes for Burg and Plymouth and it allows
+ the creation of customized themes. 

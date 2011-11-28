@@ -1,0 +1,181 @@
+Grub-installatie
+Parameters
+BURG INSTALLER
+Geef aan waar Burg te installeren/herstellen (standaard: sda)
+Burg emuleren, knoppen: "T" en "F"
+burg-install
+burg-emu
+Selecteer op te starten OS
+Toepassen
+Resolutie monitor:
+Stel schermresolutie in
+Time-out ingesteld op
+seconden
+Time-out instellen
+Wijzigingen toepassen
+Themes Installer
+Burg verwijderen
+Burg verwijderen en Grub herstellen
+Burg verwijderen
+Selecteer harde schijf
+Grub herstellen
+Geavanceerde parameters
+Bewerk /etc/default/burg
+Bestand openen
+Inschakelen
+Uitschakelen
+Wijzigen
+Opgeslagen
+Username burg:
+Toevoegen
+Verwijderen
+Info
+LICENTIE
+SBM HOMEPAGE
+BURG HOMEPAGE PROJECT
+BUC HOMEPAGE
+SICILINUX HOMEPAGE
+Klik twee keer op een icoon om een thema te installeren
+Verwijder oude kernel/menu-item:
+Uitvoeren
+Standaardinstellingen van SBM herstellen:
+Instellingen herstellen
+ISO opstarten
+Selecteer ISO om op te starten
+Menu-item toevoegen
+ISO-type instellen
+Controleren op updates
+Uitvoeren
+Er is een nieuwe versie van Super-Boot-Manager beschikbaar
+Nu upgraden?
+Ja
+Nee
+admin name
+user name
+Als de update klaar is zal het programma
+automatisch opnieuw opgestart worden
+Geen updates beschikbaar
+OK
+Selecteer de te verwijderen ISO of menu-item
+Verwijderen
+Opdracht succesvol uitgevoerd
+Burg terugzetten in MBR
+Basis parameters 
+Na een kernel update wordt 
+Burg overschreven door Grub
+Door te klikken op "Burg terugzetten in MBR"
+kan het probleem
+verholpen worden.
+Help
+Er heeft zich een fout voorgedaan tijdens installatie
+GRUB INSTALLER
+Geef aan waar Grub te installeren/herstellen (standaard: sda)
+Grub emuleren, knoppen: "T" en "F"
+grub-install
+grub-emu
+Grub verwijderen en Burg herstellen
+Grub verwijderen
+Grub herstellen
+Bewerk /etc/default/grub
+Username grub:
+Grub terugzetten in MBR
+Grub zal in het MBR overschreven worden.
+Klik op "Grub terugzetten in MBR"
+Installatie
+Waar moet Grub geïnstalleer worden: 
+Grub installeren
+Selecteer een afbeelding om als achtergrond weer te geven in Grub (.jpg,.tga,.png)
+
+Toepassen
+Kies kleur voor...
+normale tekst
+achtergrond normale tekst
+gemarkeerde tekst
+achtergrond gemarkeerde tekst
+Kleur veranderen
+Burg-installatie
+Param. 1
+Param. 2
+Param. 3
+Param. 4
+Stijl
+Handleiding: grafische resolutie
+1) stel schermresolutie in voor Burg of Grub d.m.v. de functies
+   bij de desbetreffende manager,
+   afhankelijk van de gekozen bootloader
+2) herstart, druk c in bij burg/grub, om de commandoregel te starten
+   en voer vbeinfo uit en noteer de vesa code 
+   die correspondeerd met dezelfde resolutie due wordt gebruikt voorgrub/burg
+   (bv. vga=0x0319). Type dan "exit" en herstart.
+3) Voor BURG:
+   start burg-manager en ga naar tabblad 'Parameters 4'
+   vul bij GRUB_CMDLINE_LINUX de genoteerde waarde in (bv. vga=0x0319)
+   en ga naar tabblad 'Parameters 3' GRUB_LINUX16.
+   Voer uit vanaf de commandoregel: sudo update-burg.
+   Herstart om zeker te zijn dat Plymouth correct wordt
+   weergegeven.
+   Voor GRUB:
+   start grub-manager en ga naar tabblad 'Parameters 3'
+   vul bij GRUB_CMDLINE_LINUX de genoteerde waarde in (bv. vga=0x0319)
+   en ga naar tabblad 'Parameters 4' GRUB_LINUX16.
+   Voer uit vanaf de commandoregel: sudo update-grub.
+   Herstart om zeker te zijn dat Plymouth correct wordt
+   weergegeven.
+   Als Plymouth niet correct is weergegeven kunt u gebruikmaken van de optie
+   op het tabblad "Gesloten drivers".
+Open
+Op dit tabblad kunt u Plymouth geschikt maken voor gesloten drivers.
+Als u een niet-gesloten driver gebruikt, voor dit proces dan niet uit.
+In sommige gevallen zal de handleiding op het eerste tabblad niet werken
+en moet u een beroep doen op de methode op dit tabblad.
+Thema maken en installeren
+Thema maken en in deze map opslaan zonder het te installeren:
+Thema model
+Plymouth bewerken
+Plymouth inschakelen/uitschakelen
+Inschakelen
+Uitschakelen
+Thema's
+Standaardthema bekijken
+Klik twee keer om een thema te installeren
+1. Standaardthema instellen
+2. Wijzigingen toepassen
+Thema maken
+Thema model weergeven
+Selecteer achtergrond (*.jpg *.png)
+Selecteer logo  (*.jpg *.png)
+Kies een thema naam:
+Mijnthema
+Map:
+Gesloten drivers
+Selecteer gebruikte bootloader:
+Fix toepassen
+Fix ongedaan maken
+grub-emu
+sluit grub-emu
+Handige knoppen
+t - Open thema selectie menu
+f - Schakel tussen inklap modus
+n - Spring naar het volgende item in dezelfde groep
+w - Spring naar het volgende Windows item
+u - Spring naar het volgende Ubuntu item
+e - Bewerk het commando van het huidige opstart-item
+c - Open een terminal venster
+2 - Open twee terminal vensters
+h - Help weergeven (alleen beschikbaar in sora thema)
+i - Informatie weergeven (alleen beschikbaar in sora thema)
+q - Keer terug naar het oude Grub menu
+F5/ctrl-x - Bewerking beëindigen
+F6 - Schakel venster om naar duale terminal modus
+F7 - Geef ingeklapte opstart-items weer
+F8 - Schakel tussen grafische en tekst modus
+F9 - afsluiten
+F10 - herstarten
+ESC - het huidige menu of venster sluiten
+Controleren op updates
+Studiepunten
+Alleen voor experts: het systeem kan niet starten
+vesa codes
+Vesa codes die overeenkomen met 
+de meest voorkomende resoluties:
+Update pakket lijst

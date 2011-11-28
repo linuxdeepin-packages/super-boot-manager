@@ -1,0 +1,150 @@
+super-boot-manager (0.6.1-4ubuntu1) oneiric; urgency=low
+
+  * Change compat to 8.
+  * Build for oneiric.
+
+ -- Li Longyu <leaeasy@gmail.com>  Mon, 28 Nov 2011 15:22:46 +0800
+
+super-boot-manager (0.6.1-4) natty; urgency=high
+
+  * added some fixes
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 21 May 2011 13:49:33 +0200
+
+super-boot-manager (0.6.1-3) natty; urgency=low
+
+  * added indentation to burg-manager after special request 
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 21 May 2011 11:53:03 +0200
+
+super-boot-manager (0.6.1-2) natty; urgency=high
+
+  * Modified executable
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 21 May 2011 10:45:44 +0200
+
+super-boot-manager (0.6.1-1) natty; urgency=low
+
+  * Fixed installer theme satanic and spinfinity ubuntu women 
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 21 May 2011 09:35:03 +0200
+
+super-boot-manager (0.6.0-2) natty; urgency=high
+
+  * changed tar and libqtgui4 dependencies version
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 21 May 2011 07:42:13 +0200
+
+super-boot-manager (0.6.0-1) natty; urgency=high
+
+  * added update_sources script
+
+ -- Alessandro Lanave <allanav@tin.it>  Fri, 20 May 2011 19:39:43 +0200
+
+super-boot-manager (0.5.9-3) natty; urgency=high
+
+  * added some fixes
+
+ -- Alessandro Lanave <allanav@tin.it>  Fri, 20 May 2011 19:00:46 +0200
+
+super-boot-manager (0.5.9-2ubuntu1) natty; urgency=low
+
+  * added "update package list button"
+
+ -- Alessandro Lanave <allanav@tin.it>  Fri, 20 May 2011 18:55:22 +0200
+
+super-boot-manager (0.5.9-2) natty; urgency=high
+
+  * added some fixes
+
+ -- Alessandro Lanave <allanav@tin.it>  Fri, 20 May 2011 17:23:30 +0200
+
+super-boot-manager (0.5.9) natty; urgency=high
+
+  * added es localization
+
+ -- Alessandro Lanave <allanav@tin.it>  Fri, 20 May 2011 15:48:15 +0200
+
+super-boot-manager (0.5.8-3) natty; urgency=high
+
+  * removed postinst repository delection command
+
+ -- Alessandro Lanave <allanav@tin.it>  Fri, 20 May 2011 08:49:26 +0200
+
+super-boot-manager (0.5.8-2) natty; urgency=high
+
+  * Fixed Tab Parm3 and added hr localization
+
+ -- Alessandro Lanave <allanav@tin.it>  Thu, 19 May 2011 18:52:20 +0200
+
+super-boot-manager (0.5.7-4) natty; urgency=high
+
+  * Fixed burg-installer
+
+ -- Alessandro Lanave <allanav@tin.it>  Thu, 19 May 2011 15:48:42 +0200
+
+super-boot-manager (0.5.7-1) natty; urgency=low
+
+  * Added vesa table and warning message
+
+ -- Alessandro Lanave <allanav@tin.it>  Thu, 19 May 2011 12:28:01 +0200
+
+super-boot-manager (0.5.6-5) natty; urgency=low
+
+  * Added swedish localization and fixed notifier and main mc
+
+ -- Alessandro Lanave <allanav@tin.it>  Wed, 18 May 2011 21:16:34 +0200
+
+super-boot-manager (0.5.6-4) natty; urgency=high
+
+  * Removed "sudo apt-get update" at first start
+
+ -- Alessandro Lanave <allanav@tin.it>  Wed, 18 May 2011 14:45:56 +0200
+
+super-boot-manager (0.5.6-2) natty; urgency=high
+
+  * Fixed burg installer
+
+ -- Alessandro Lanave <allanav@tin.it>  Wed, 18 May 2011 13:11:50 +0200
+
+super-boot-manager (0.5.6-1) natty; urgency=high
+
+  * Adapted super-boot-manager to install theme from ppa
+
+ -- Alessandro Lanave <allanav@tin.it>  Wed, 18 May 2011 12:58:49 +0200
+
+super-boot-manager (0.5.5-1) natty; urgency=low
+
+  * Added theme icarus to burg-manager
+
+ -- Alessandro Lanave <allanav@tin.it>  Sun, 15 May 2011 10:19:32 +0200
+
+super-boot-manager (0.5.4-1) natty; urgency=low
+
+  * Added info to credits
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 14 May 2011 18:19:47 +0200
+
+super-boot-manager (0.5.3-1) natty; urgency=low
+
+  * Added fixes
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 14 May 2011 13:22:41 +0200
+
+super-boot-manager (0.5.2-1ubuntu1) natty; urgency=low
+
+  * Applyed some fixes
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 14 May 2011 12:29:19 +0200
+
+super-boot-manager (0.5.1-1) natty; urgency=low
+
+  * Added English localization and grub-emu button and other fixes
+
+ -- Alessandro Lanave <allanav@tin.it>  Sat, 14 May 2011 11:11:05 +0200
+
+super-boot-manager (0.5.0-1) natty; urgency=low
+
+  * Initial release. 
+
+ -- Alessandro Lanave <allanav@tin.it>  Fri, 13 May 2011 15:18:14 +0200

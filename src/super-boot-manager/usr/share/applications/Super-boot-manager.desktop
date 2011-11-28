@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Super-Boot-Manager
+Exec=super-boot-manager
+Icon=super-boot-manager
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;System;

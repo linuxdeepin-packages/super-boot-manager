@@ -1,0 +1,181 @@
+Instalirajte Grub
+Opcije
+B U R G  I NS T A L E R
+Odaberite disk na koji cete instalirati/reinstalirati Burg (zadani disk: sda)
+Emuliraj Burg tipke: "T" i "F"
+Instaliraj Burg
+Burg-emu
+Odaberite zadani OS pri pokretanju sustava
+Primjeni
+Rezolucija vaseg monitora:
+Odaberite rezoluciju monitora
+Vrijeme do pokretanja sustava je
+sekundi
+Postavi
+Primjenite izmjene
+Dodatne teme
+Deinstaliraj Burg
+Deinstaliraj Burg i vrati Grub
+Deinstaliraj Burg
+Odaberite disk
+Vrati Grub
+Napredne opcije
+Uredite datoteku /etc/default/burg
+Otvorite datoteku
+Omoguci
+Onemoguci
+Promijeni
+Spremi promjene
+Korisnicko ime Burg:
+Dodaj
+Ukloni
+Info
+LICENCA
+SBM WEB STRANICA
+BURG WEB STRANICA
+BUC WEB STRANICA
+SICILINUX WEB STRANICA
+Dva puta klikni na ikonu za instalaciju teme!
+Ukloni prijasnje verzije kernela i ostale stavke izbornika:
+Primjeni
+Povrati zadane postavke SBM:
+Vrati postavke
+Boot iso
+Odaberite iso sliku koju zelite podici (bootati) iz Burg/Grub izbornika
+Dodajte u izbornik
+Odaberite vrstu iso slike
+Provjerite ima li SBM dostupnih nadogradnji!
+Provjeri
+Dostupna je nova verzija Super-Boot-Managera
+Zelite li nadograditi Super-Boot-Manager?
+Da
+Ne
+upisite ovdje "admin korisnicko ime"
+upisite ovdje "korisnicko ime"
+Kada je nadogradnja zavrsena Super-Boot-Manager ce se
+automatski ponovno pokrenuti
+SBM nema dostupnih nadogradnji!
+Uredu
+Odaberite iso sliku koju zelite ukloniti iz Burg/Grub izbornika
+Ukloni
+Izmjene uspjesno izvrsene
+Povrati Burg u MBR
+Osnovne Opcije
+Nakon nadogradnje kernela Burg je
+prebrisao Grub preko MBR.
+Klikom na "Povrati Burg 
+u MBR" mozete popraviti taj 
+problem.
+Pomoc
+Doslo je do pogreske tijekom instalacije
+GRUB INSTALER
+Odaberite disk na koji cete instalirati/reinstalirati grub (zadani disk: sda)
+Emuliraj Burg, tipke: "T" and "F"
+Instaliraj Grub
+grub-emu
+Ukloni Grub, i povrati Burg
+Ukloni Burg
+Povrati Grub
+Uredite datoteku /etc/default/grub
+Korisnicko ime grub:
+Povrati Grub u MBR
+Grub ce biti prepisan preko MBR.
+Klikom na "Povrati Grub u MBR"
+Instalacija
+Na koji disk zelite instalirati Grub: 
+Instaliraj Grub
+Odaberite sliku koju zelite postaviti kao pozadinu Gruba (.jpg,.tga,.png)
+
+Primjeni
+Odaberite boju za...
+normalan tekst
+normalan tekst pozadine
+istaknuti tekst
+istaknuti tekst pozadine
+Promjenite boju
+Instaliraj Burg
+Opcije. 1
+Opcije. 2
+Opcije. 3
+Opcije. 4
+Stil
+Upute: rezolucija grafike
+1) Postavite rezoluciju za bootloader koristeci opcije
+   koje mozete pronaci u Burg-manageru i Grub-manageru
+   ovisno koji se bootloader trenutno koristi.
+2) Ponovno pokrenite racunalo, pristupite Burg/Grub-u,
+   pritisnite c za pristup ljusci i pokrenite vbeinfo a ne vesa kod
+   koji odgovara istoj rezoluciji u Grub/Burg-u (npr. vga=0x0319).
+   Onda napisite "exit" i ponovno pokrenite racunalo u Ubuntu.
+3) Za BURG:
+   Pokrenite Burg-manager i otvorite karticu 'Opcije 4'
+   ispunite GRUB_CMDLINE_LINUX s poznatim vrijednostima (npr. vga=0x0319)
+   i omogucite u kartici 'Opcije 3' GRUB_LINUX16.
+   Pokrenite iz ljuske: sudo update-burg.
+   Ponovno pokrenite racunalo da vidite je li plymouth
+   prikazan ispravno.
+   Za GRUB:
+   Pokrenite Gurb-manager i otvorite karticu 'Opcije 4'
+   ispunite GRUB_CMDLINE_LINUX s poznatim vrijednostima (npr. vga=0x0319)
+   i omogucite u kartici 'Opcije 4' GRUB_LINUX16.
+   Pokrenite iz terminala: sudo update-grub.
+   Ponovno pokrenite racunalo da vidite je li plymouth
+   prikazan ispravno.
+   Ako plymouth nije prikazan ispravno mozete koristiti opcije
+   koje se nalaze u kartici "Vlasnicki Driveri "
+Otvori
+U ovoj kartici mozete Plymouth uciniti kompatibilnim sa Vlasnickim Driverima.
+Ako koristite drivere otvorenog koda, nemojte pokrenuti ovu proceduru.
+U nekim slucajevima, predlozena metoda u uputama na prvoj kartici ne radi.
+i morate pribjeci metodi implementiranoj u toj kartici.
+Napravite i instalirajte temu
+Napravite temu u sljedecem direktoriju bez instalacije:
+Model teme
+Uredite Plymouth
+Omogucite/Onemogucite Plymouth
+Omogucite
+Onemogucite
+Teme
+Pogledajte zadanu temu
+Kliknite dva puta za instalaciju teme
+1. Postavite zadanu temu
+2. Primjenite promjene
+Napravite vlastitu temu
+Prikazi model teme
+Odaberite pozadinu (*.jpg *.png)
+Odaberite logo (*.jpg *.png)
+Odaberite naziv teme:
+MojaTema
+Direktorij:
+Vlasnicki Driveri
+Odaberite bootloader u upotrebi:
+Primjeni Popravak
+Ponisti Popravak
+grub-emu
+Zatvori grub-emu
+Korisne tipke
+t - Otvorite izbornik za odabir teme
+f - Ukljuci/Iskljuci preklopnu metodu
+n - Idi na sljedecu stavku iste vrste
+w - Idi na sljedecu stavku prozora
+u - Idi na sljedecu stavku Ubuntua 
+e - Uredite naredbu trenutno zadane boot stavke
+c - Otvorite terminal
+2 - Otvorite dva terminala
+h - Prikaz dijaloga pomoci (dostupno samo u sora temi)
+i - Prikaz "o temi" dijaloga (dostupno samo u sora temi)
+q - Povratak na stari grub izbornik
+F5/ctrl-x - Zavrsetak uredivanja
+F6 - Prebacivanje prozora u dualnom terminalnom modu
+F7 - Listajte preklopive boot stavke
+F8 - Ukljuci/Iskljuci Graficki i tekstualni mod
+F9 - Iskljucivanje
+F10 - Ponovno pokretanje 
+ESC - Izlaz iz trenutnog popup izbornika ili dijaloga.
+Provjerite ima li SBM dostupnih nadogradnji!
+Impresum
+Za napredne korisnike: sustav mozda nece biti moguce podici!!!
+vesa kodovi
+Vesa kodovi odgovaraju vecini
+zajednickih rezolucija:
+Azurirati paket popis

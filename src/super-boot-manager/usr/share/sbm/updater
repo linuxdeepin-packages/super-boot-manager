@@ -1,0 +1,13 @@
+#!/bin/bash
+cd ~/.sbm
+wget http://dl.dropbox.com/u/877248/version
+now=$(cat ~/.sbm/version|tr -d ".")
+rm -rf ~/.sbm/version
+installed=$(cat /usr/share/sbm/version)
+if [ "$now" -gt "$installed" ] ; 
+then
+buc /usr/share/sbm/updateavaible.mc
+else
+buc /usr/share/sbm/updatenotavaible.mc
+fi
+exit 0

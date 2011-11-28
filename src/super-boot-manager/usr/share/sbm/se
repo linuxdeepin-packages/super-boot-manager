@@ -1,0 +1,181 @@
+Grub-installation
+Parametrar
+BURG INSTALLATION
+Sökväg (standard: sda)
+Emulera Burg, tangenter: "T" and "F"
+installera burg
+emulera burg
+Väl vilket OS ska starta som standard
+Verkställ
+Skärmupplösning:
+Ställ in skärmupplösning
+Ställ in Timer
+sekunder
+Ställ in timer
+Verkställ inställningar
+Tema installerare
+Ta bort Burg
+Ta bort Burg, och återställ Grub
+Ta bort Burg
+Välj hårddisk
+Återställ Grub
+Avancerade Parametrar
+Redigera /etc/default/burg
+Öppna fil
+Aktivera
+Avaktivera
+Ändra
+Sparat
+Användarnamn burg:
+Lägg till
+Ta bort
+Info
+LICENS
+SBM HOMEPAGE
+BURG HOMEPAGE PROJECT
+BUC HOMEPAGE
+SICILINUX HOMEPAGE
+Dubbelklicka på temat för att installera
+Ta bort gamla kärnposter:
+Aktivera
+Återställ standardinställningar på sbm:
+Återställ inställningar
+Boota isofil
+Välj isofil att boota
+Lägg till i bootlista
+Välj isotyp
+Kontrollera uppdateringar
+Aktivera
+En ny Super-Boot-Manager version är tillgänglig
+Vill du uppdatera?
+Ja
+Nej
+admin namn
+användarnamn
+När uppdateringen är klar kommer programmet
+att automatiskt starta om
+Inga uppdateringar tillgängliga
+OK
+Välj iso från lista som du vill ta bort
+Ta bort
+Lyckades!
+Återställ Burg till MBR
+Standard parametrar
+Efter är kärnuppdatering kommer Burg
+blir ersatt av Grub i MBR.
+Klickar du på "Återställ Burg
+till MBR" löser detta
+problem.
+Hjälp
+Ett fel har inträffat under installation
+GRUB INSTALLATION
+Installationssökväg (standard: sda)
+Emulera Burg, tangenter: "T" och "F"
+grub-install
+grub-emu
+Ta bort Grub, och återställ Burg
+Ta borg Burg
+Återställ Grub
+Redigera /etc/default/grub
+Användarnamn grub:
+Återställ Grub till MBR
+Grub kommer att skrivas över till MBR.
+Klickar på "Återställ Grub till MBR"
+Installation
+Sökväg att installera Grub: 
+Installera Grub
+Välj en bild att sätta som bakgrundsbild till Grub (.jpg,.tga,.png)
+
+Verkställ
+Välj färg for...
+normal text
+bakgrund normal text
+framhävd text
+framhävd bakgrunds text
+Ändra färg
+Burg-installation
+Param. 1
+Param. 2
+Param. 3
+Param. 4
+Stil
+Handledning: upplösning
+1) Välj skärmupplösning till bootloaders som använder funktioner
+   som du kan hitta i Burg-manager och Grub-Manager
+   beroende på vilken bootloader som används
+2) starta om, kom åt burg/grub, tryck c för att öppna prompt
+   och starta vbeinfo och note vesa code
+   och jämför med samma upplösning som används för grub/burg
+   (ex. vga=0x0319). Skriv därefter "exit" och starta om till Ubuntu.
+3) För BURG:
+   starta burg-manager och gå till tabb 'Parametrar 4'
+   fält GRUB_CMDLINE_LINUX med markerade värden (ex. vga=0x0319)
+   och aktivera i tabben 'Parametrar 3' GRUB_LINUX16.
+   Kör från terminal: sudo update-burg
+   Starta om för att kontrollera att Plymouth visas
+   felfritt.
+   För GRUB:
+   starta grub-manager och gå in till tabben 'Parametrar 3'
+   fält GRUB_CMDLINE_LINUX med markerade värden (ex. vga=0x0319)
+   och aktivera i tabben 'Parametrar 4' GRUB_LINUX16.
+   Kör från terminal: sudo update-grub
+   Starta om för att kontrollera att Plymouth visas
+   felfritt.
+   Om inte Plymouth visas korrekt kan du använda funktionen i 
+   "Stänga Drivrutiner".
+Öppna
+I denna flik kan du skapa Plymouth kompatibla med stängda grafikdrivrutiner.
+Om du använder den öppna versionen av grafikdrivrutiner, använd inte detta.
+I vissa fall fungerar inte metoden som nämns i den första fliken
+och du måste prova metoden som används i denna flik.
+Skapa och installera tema.
+Skapa tema till denna katalog utan att installera det:
+Tema modell
+Redigera plymouth
+Aktivera/Avaktivera Plymouth
+Aktivera
+Avaktivera
+Tema
+Förhandsgranska standard tema
+Dubbelklicka för att installera ett tema
+1. Ställ in standardtema
+2. Aktivera ändringar
+Skapa ditt tema
+Visa tema modell
+Välj bakgrund (*.jpg *.png)
+Välj logotyp  (*.jpg *.png)
+Välj temanamn:
+Mitt tema
+Katalog:
+Stängda drivrutiner
+Välj bootloader som används:
+Aktivera Fix
+Ångra Fix
+grub-emu
+stäng grub-emu
+Användbara tangenter
+t - Starta temahanteraren
+f - Växla mellan hopfällt läge
+n - Hoppa till nästa val i samma grupp
+w - Hoppa till nästa Windows val
+u - Hoppa till nästa Ubuntu val
+e - Redigera kommandon till makerat bootval
+c - Öppna ett terminalfönster
+2 - Öppna två terminalfönster
+h - Visa hjälp (bara tillgängligt i sora temat)
+i - Visa Om ruta (bara tillgängligt i sora temat)
+q - Gå tillbaka till gamla grub menyn
+F5/ctrl-x - Avsluta redigering
+F6 - Växla fönster i dubbla terminalfönster
+F7 - Lista katalogiserat boot val
+F8 - Växla mellan grafik och textläge
+F9 - stäng av
+F10 - starta om
+ESC - Avsluta från nuvarande popup meny eller ruta. 
+Kontrollera om uppdatering
+Information
+Endast experter: systemet inte kan starta
+vesa koder
+Vesa koder motsvarande 
+vanligaste resolutioner:
+Uppdatera paketlistan

@@ -1,0 +1,12 @@
+#!/bin/bash
+rootpw=`zenity --title="Root-Password" --window-icon=/usr/share/sbm/images/admin.png --text='please type root password' --hide-text="" --entry`
+if [ -f ~/.sbm/language ]
+then
+echo $rootpw | sudo -S buc /usr/share/sbm/sbm.mc
+elif [ ! -d ~/.sbm ]; then
+mkdir ~/.sbm
+echo $rootpw | sudo -S buc /usr/share/sbm/langchooser.mc
+elif [ -d ~/.sbm -a ! -f ~/.sbm/language ]; then
+echo $rootpw | sudo -S buc /usr/share/sbm/langchooser.mc
+fi
+unset rootpw

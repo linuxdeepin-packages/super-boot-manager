@@ -1,0 +1,28 @@
+#!/bin/bash
+OK=0
+bash /usr/share/sbm/update_sources
+#last_stable="11.04"
+#alpha="11.10"
+disk=$(cat ~/.sbm/disk)
+#disk="/dev/sda"
+#version=$(lsb_release -r -s|sed '/^[ ]*$/d') && if [ $version=$last_stable -o $version=$alpha ]
+#then 
+#repo="n-muench/burg"
+#else
+#repo="bean123ch/burg"
+#fi
+#xterm -e "sudo add-apt-repository ppa:$repo && sudo apt-get update && sudo apt-get install burg burg-themes burg-emu" &&
+sudo apt-get update && sudo apt-get install burg burg-themes burg-emu
+if [ $? -eq $OK ]
+   then
+   sudo burg-install $disk && sudo update-burg
+   if [ $? -eq $OK ]
+   then
+   buc /usr/share/sbm/success.mc
+   else
+   buc /usr/share/sbm/unsuccess.mc
+   fi
+else
+buc /usr/share/sbm/unsuccess.mc
+fi
+exit 0

@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ ! -f ~/.sbm/updated ]; then
+sudo apt-get update
+touch ~/.sbm/updated
+fi 
+exit 0

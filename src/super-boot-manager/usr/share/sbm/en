@@ -1,0 +1,181 @@
+Grub-installer
+Parameters
+BURG INSTALLER
+Where to install/restore burg (default: sda)
+Emulate Burg, buttons: "T" and "F"
+burg-install
+burg-emu
+Select default OS to boot
+Apply
+Resolution for your monitor:
+Set screen resolution
+Now timeout is set to
+seconds
+Set timeout
+Apply changes
+Themes Installer
+Remove Burg
+Remove Burg, and restore Grub
+Remove Burg
+Choose hard disk
+Restore Grub
+Advanced Parameters
+Edit /etc/default/burg
+Open file
+Enable
+Disable
+Change
+Saved
+Username burg:
+Add
+Remove
+Info
+LICENSE
+SBM HOMEPAGE
+BURG HOMEPAGE PROJECT
+BUC HOMEPAGE
+SICILINUX HOMEPAGE
+Click twice on an icon to install a theme
+Remove old kernel/menuentry:
+Execute
+Restore default settings of the sbm:
+Restore settings
+Boot iso
+Select iso to boot
+Add menuentry
+Set iso type
+Check updates availability
+Execute
+It's avaible a new Super-Boot-Manager version
+Do you want to upgrade?
+Yes
+No
+admin name
+user name
+When update is finished Super-Boot-Manager program will be
+automatically restarted
+No updates available
+OK
+Select iso of menuentry that you want to remove 
+Remove
+Operation done successfully
+Restore Burg into MBR
+Basic Parameters 
+After a kernel update Burg is 
+overwritten by Grub into MBR.
+Clicking on "Restore Burg 
+into MBR" you can fix this 
+problem.
+Help
+An error has occurred during installation
+GRUB INSTALLER
+Where to install/restore grub (default: sda)
+Emulate Burg, buttons: "T" and "F"
+grub-install
+grub-emu
+Remove Grub, and restore Burg
+Remove Burg
+Restore Grub
+Edit /etc/default/grub
+Username grub:
+Restore Grub into MBR
+Grub will be overwritten into MBR.
+Clicking on "Restore Grub into MBR"
+Installation
+Where to install Grub: 
+Install Grub
+Select an image to set as background of Grub (.jpg,.tga,.png)
+
+Apply
+Choose color for...
+normal text
+background normal text
+highlighted text
+background highlighted text
+Change color
+Burg-installer
+Param. 1
+Param. 2
+Param. 3
+Param. 4
+Style
+Tutorial: graphic resolution
+1) set screen resolution for bootloader using features
+   that you can find into Burg-Manager and Grub-Manager
+   depending on bootloader in use
+2) reboot, access to burg/grub, press c to open shell
+   and execute vbeinfo and note vesa code 
+   corrisponding to the same resolution used for grub/burg
+   (ex. vga=0x0319). Then write "exit" and reboot into Ubuntu.
+3) For BURG:
+   start burg-manager and set into tab 'Parameters 4'
+   field GRUB_CMDLINE_LINUX with noted value (es. vga=0x0319)
+   and enable into tab 'Parameters 3' GRUB_LINUX16.
+   Execute from shell: sudo update-burg.
+   Reboot to make sure that Plymouth is displayed 
+   correctly.
+   For GRUB:
+   start grub-manager and set into tab 'Parameters 3'
+   field GRUB_CMDLINE_LINUX with noted value (es. vga=0x0319)
+   and enable into tab 'Parameters 4' GRUB_LINUX16.
+   Execute from shell: sudo update-grub.
+   Reboot to make sure that Plymouth is displayed 
+   correctly.
+   If Plymouth isn't displayed correctly you can use the feature 
+   that you can find into tab "Proprietary Drivers".
+Open
+In this tab you can make Plymouth compatible with Proprietary Drivers.
+If you're using the open drivers, do not perform this procedure.
+In some cases, the method proposed in the tutorial on the first tab does not work
+and you must recourse to the method implemented in this tab.
+Create and install theme
+Create theme into following directory without installing it:
+Theme Model
+Edit plymouth
+Enable/Disable Plymouth
+Enable
+Disable
+Themes
+Preview default theme
+Click twice to install theme
+1. Set a default theme
+2. Apply changes
+Create your theme
+Display theme model
+Select background (*.jpg *.png)
+Select logo  (*.jpg *.png)
+Choose theme name:
+Mytheme
+Directory:
+Proprietary Drivers
+Select bootloader in use:
+Apply Fix
+Undo Fix
+grub-emu
+close grub-emu
+Useful buttons
+t - Open theme selection menu
+f - Toggle between folding mode
+n - Jump to the next item with the same class
+w - Jump to the next Windows item
+u - Jump to the next Ubuntu item
+e - Edit the command of current boot item
+c - Open a terminal window
+2 - Open two terminal windows
+h - Display help dialog (only available in sora theme)
+i - Display about dialog (only available in sora theme)
+q - Return to old grub menu
+F5/ctrl-x - Finish edit
+F6 - Switch window in dual terminal mode
+F7 - List the folded boot items
+F8 - Toggle between graphic and text mode
+F9 - shutdown
+F10 - reboot
+ESC - quit from the current popup menu or dialog. 
+Check for update
+Credits
+Experts only: the system may not boot
+vesa codes
+Vesa codes corrisponding to most 
+common resolutions:
+update package list

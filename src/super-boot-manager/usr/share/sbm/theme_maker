@@ -1,0 +1,76 @@
+#!/bin/bash
+echo "Creating theme...please wait"
+ext1="png"
+ext2="jpg"
+ext3="jpeg"
+ext4="JPEG"
+ext5="PNG"
+ext6="JPG"
+
+background_location=$(cat ~/.sbm/background)
+filenamebg=$(basename $background_location)
+namebg=${filenamebg%.*}
+
+logo_location=$(cat ~/.sbm/logo)
+filenamelg=$(basename $logo_location)
+namelg=${filenamelg%.*}
+
+nametheme=$(cat ~/.sbm/nametheme)
+
+extension_background=$(echo $background_location|awk -F . '{print $NF}')
+extension_logo=$(echo $logo_location|awk -F . '{print $NF}')
+
+sudo cp -rf /usr/share/sbm/model/ ~/.sbm/
+sudo mv ~/.sbm/model ~/.sbm/$nametheme
+if [ $extension_background=$ext2 -o $extension_background=$ext3 -o $extension_background=$ext4 -o $extension_background=$ext6 ]
+then 
+sudo cp $background_location ~/.sbm/$nametheme/
+mogrify -format png $filenamebg
+elif [ $extension_background=$ext1 -o $extension_background=$ext5 ]
+then
+sudo cp $background_location ~/.sbm/$nametheme/
+sudo mv ~/.sbm/$nametheme/$filenamebg ~/.sbm/$nametheme/background.png
+else
+echo "UNKNOW FORMAT FILE SPECIFIED AS BACKGROUND"
+fi
+
+if [ $extension_logo=$ext2 -o $extension_logo=$ext3 -o $extension_logo=$ext4 -o $extension_logo=$ext6 ]
+then 
+sudo cp $logo_location ~/.sbm/$nametheme/
+mogrify -format png $filenamelg
+elif [ $extension_logo=$ext1 -o $extension_logo=$ext5 ]
+then
+sudo cp $logo_location ~/.sbm/$nametheme/
+sudo mv ~/.sbm/$nametheme/$filenamelg ~/.sbm/$nametheme/logo.png
+else
+echo "UNKNOW FORMAT FILE SPECIFIED AS LOGO"
+fi
+
+echo "[Plymouth Theme]" >> ~/.sbm/$nametheme.plymouth
+echo "Name="$nametheme >> ~/.sbm/$nametheme.plymouth
+echo "Description="$nametheme >> ~/.sbm/$nametheme.plymouth
+echo "ModuleName=script" >> ~/.sbm/$nametheme.plymouth
+echo ""
+echo "[script]" >> ~/.sbm/$nametheme.plymouth
+echo "ImageDir=/lib/plymouth/themes/"$nametheme >> ~/.sbm/$nametheme.plymouth
+echo "ScriptFile=/lib/plymouth/themes/"$nametheme"/mdv.script" >> ~/.sbm/$nametheme.plymouth
+sudo mv ~/.sbm/$nametheme.plymouth ~/.sbm/$nametheme/$nametheme.plymouth
+if [ -f ~/.sbm/destinationtheme ]; then
+destinationtheme=$(cat ~/.sbm/destinationtheme) 
+cd ~/.sbm/
+sudo tar -cvzpf $nametheme.tgz $nametheme/
+sudo mv $nametheme.tgz $destinationtheme
+echo "THEME SUCCESSFULLY CREATED INTO" $destinationtheme
+else
+
+sudo mv ~/.sbm/$nametheme/ /lib/plymouth/themes/
+sudo update-alternatives --install /lib/plymouth/themes/default.plymouth default.plymouth /lib/plymouth/themes/$nametheme/$nametheme.plymouth 100
+sudo update-initramfs -u
+echo "THEME SUCCESSFULLY INSTALLED, NOW YOU CAN SET IT AS DEFAULT THEME"
+fi
+rm -rf ~/.sbm/background ~/.sbm/logo ~/.sbm/nametheme ~/.sbm/compress ~/.sbm/destinationtheme
+
+sleep 2
+
+
+exit 0

@@ -1,0 +1,24 @@
+#!/bin/bash
+#ext1="png"
+#ext2="jpg"
+#ext3="jpeg"
+#ext4="tga"
+imagelocation=$(cat ~/.sbm/gbackground)
+imagesize=$(cat ~/.sbm/size)
+#extension=$(echo $imagelocation|awk -F . '{print $NF}')
+#mv $imagelocation /usr/share/images/grub/
+sudo rm -rf /boot/grub/*.jpg /boot/grub/*.jpeg /boot/grub/*.tga /boot/grub/*.png
+sudo cp $imagelocation /boot/grub/
+echo "Background copied to /boot/grub"
+filename=$(basename $imagelocation)
+name=${filename%.*}
+sudo mogrify -resize $imagesize! /boot/grub/$filename 
+echo "Resizing Completed"
+sudo update-grub 
+rm -rf ~/.sbm/gbackground ~/.sbm/size
+echo "Operation Completed"
+sleep 2
+
+
+exit 0
+
